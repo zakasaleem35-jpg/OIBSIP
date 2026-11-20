@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zaka Saleem Hamdani — Python Developer and AI/ML Engineer from Lahore.">
+    <title>Zaka Saleem Hamdani | Python & AI/ML Engineer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===== 1. Navbar ===== -->
+    <header class="navbar">
+        <div class="container nav-inner">
+            <a href="#home" class="logo">ZS<span>.</span></a>
+
+            <!-- Mobile par menu kholne wala button (JavaScript se chalega) -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===== 2. Hero ===== -->
+        <section id="home" class="hero">
+            <div class="container hero-inner">
+                <!-- Avatar: photo daalni ho to is div ki jagah yeh likhein:
+                     <img src="assets/profile.jpg" alt="Zaka Saleem Hamdani" class="avatar"> -->
+                <div class="avatar" aria-hidden="true">ZS</div>
+
+                <p class="hello">Hi, I'm</p>
+                <h1>Zaka Saleem Hamdani</h1>
+                <p class="role">Python Developer <span>|</span> AI/ML Engineer</p>
+                <p class="tagline">
+                    I build Django REST backends, applied machine-learning models
+                    and LLM-powered tools, from the dataset to the API.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 3. About ===== -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title"><span>01.</span> About Me</h2>
+
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>
+                            I'm a Software Engineering graduate from Lahore Garrison University
+                            (2022–2026) who enjoys turning data and models into working products.
+                        </p>
+                        <p>
+                            My work spans Python and Django REST APIs, classic machine learning,
+                            computer vision and LLM systems such as RAG and fine-tuning. I have
+                            completed AI and ML internships at Arch Technologies, Neurofive Solutions
+                            and CodeAlpha, and I'm now sharpening my front-end skills.
+                        </p>
+                    </div>
+
+                    <ul class="facts">
+                        <li><strong>Location</strong><span>Lahore, Pakistan</span></li>
+                        <li><strong>Education</strong><span>BS Software Engineering</span></li>
+                        <li><strong>Focus</strong><span>Python · ML · GenAI</span></li>
+                        <li><strong>Status</strong><span>Open to opportunities</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 4. Skills ===== -->
+        <section id="skills" class="section section-alt">
+            <div class="container">
+                <h2 class="section-title"><span>02.</span> Skills</h2>
+
+                <div class="skills-grid">
+                    <div class="skill"><span class="skill-tag">Language</span>Python</div>
+                    <div class="skill"><span class="skill-tag">Backend</span>Django REST</div>
+                    <div class="skill"><span class="skill-tag">Database</span>SQL / SQLite</div>
+                    <div class="skill"><span class="skill-tag">Frontend</span>HTML5</div>
+                    <div class="skill"><span class="skill-tag">Frontend</span>CSS3</div>
+                    <div class="skill"><span class="skill-tag">Frontend</span>JavaScript</div>
+                    <div class="skill"><span class="skill-tag">Frontend</span>React</div>
+                    <div class="skill"><span class="skill-tag">ML</span>scikit-learn</div>
+                    <div class="skill"><span class="skill-tag">Deep Learning</span>PyTorch</div>
+                    <div class="skill"><span class="skill-tag">GenAI</span>LLMs &amp; RAG</div>
+                    <div class="skill"><span class="skill-tag">Apps</span>Streamlit</div>
+                    <div class="skill"><span class="skill-tag">Tools</span>Git &amp; GitHub</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 5. Projects ===== -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title"><span>03.</span> Projects</h2>
+
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <h3>SafeVision</h3>
+                        <p>
+                            AI traffic surveillance system: a 5-stage YOLOv8 computer-vision pipeline
+                            (98.81% precision) with a Django REST backend, React dashboard and e-challan generation.
+                        </p>
+                        <ul class="tags">
+                            <li>YOLOv8</li><li>Django REST</li><li>React</li>
+                        </ul>
+                        <a href="https://github.com/zakasaleem35-jpg" target="_blank" rel="noopener" class="card-link">GitHub →</a>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>Lahore AQI Forecasting</h3>
+                        <p>
+                            Air-quality forecasting model for Lahore using Random Forest (R² ≈ 0.84),
+                            served through an interactive Streamlit app.
+                        </p>
+                        <ul class="tags">
+                            <li>scikit-learn</li><li>pandas</li><li>Streamlit</li>
+                        </ul>
+                        <a href="https://github.com/zakasaleem35-jpg" target="_blank" rel="noopener" class="card-link">GitHub →</a>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>Algo Escape</h3>
+                        <p>
+                            A puzzle game where each level is solved with a data-structures and
+                            algorithms concept, built in Unity 6 with C#.
+                        </p>
+                        <ul class="tags">
+                            <li>Unity</li><li>C#</li><li>DSA</li>
+                        </ul>
+                        <a href="https://github.com/zakasaleem35-jpg" target="_blank" rel="noopener" class="card-link">GitHub →</a>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>Daastan Chai Landing Page</h3>
+                        <p>
+                            A responsive landing page for a fictional chai brand, built with pure
+                            HTML and CSS for the Oasis Infobyte internship.
+                        </p>
+                        <ul class="tags">
+                            <li>HTML5</li><li>CSS3</li><li>Responsive</li>
+                        </ul>
+                        <a href="https://github.com/zakasaleem35-jpg/OIBSIP/tree/main/WebDev-L1-LandingPage" target="_blank" rel="noopener" class="card-link">GitHub →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 6. Contact ===== -->
+        <section id="contact" class="section section-alt">
+            <div class="container contact">
+                <h2 class="section-title"><span>04.</span> Get In Touch</h2>
+                <p class="contact-intro">
+                    I'm open to internships, junior roles and collaborations.
+                    The quickest way to reach me is by email.
+                </p>
+
+                <div class="contact-grid">
+                    <a href="mailto:zakasaleem35@gmail.com" class="contact-card">
+                        <span class="contact-label">Email</span>
+                        zakasaleem35@gmail.com
+                    </a>
+                    <a href="https://www.linkedin.com/in/zaka-saleem" target="_blank" rel="noopener" class="contact-card">
+                        <span class="contact-label">LinkedIn</span>
+                        linkedin.com/in/zaka-saleem
+                    </a>
+                    <a href="https://github.com/zakasaleem35-jpg" target="_blank" rel="noopener" class="contact-card">
+                        <span class="contact-label">GitHub</span>
+                        github.com/zakasaleem35-jpg
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== 7. Footer ===== -->
+    <footer class="footer">
+        <p>Designed &amp; built by <strong>Zaka Saleem Hamdani</strong> · © 2026</p>
+    </footer>
+
+    <!-- JavaScript hamesha body ke akhir mein, taake pehle HTML load ho -->
+    <script src="script.js"></script>
+</body>
+</html>

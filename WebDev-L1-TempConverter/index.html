@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter | Zaka Saleem Hamdani</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="card">
+        <!-- ===== 1. Heading ===== -->
+        <header class="card-header">
+            <div class="icon" aria-hidden="true">🌡️</div>
+            <h1>Temperature Converter</h1>
+            <p class="subtitle">Convert between Celsius, Fahrenheit and Kelvin</p>
+        </header>
+
+        <!-- ===== 2. Form ===== -->
+        <form id="converterForm" novalidate>
+
+            <!-- Input value -->
+            <label for="tempInput" class="label">Temperature value</label>
+            <input
+                type="text"
+                id="tempInput"
+                class="input"
+                placeholder="e.g. 37 or -40"
+                inputmode="decimal"
+                autocomplete="off"
+            >
+
+            <!-- Error message (JavaScript yahan text likhegi) -->
+            <p id="errorMsg" class="error" role="alert"></p>
+
+            <!-- Input unit (radio buttons) -->
+            <fieldset class="units">
+                <legend class="label">Convert from</legend>
+
+                <input type="radio" name="unit" id="unitC" value="C" checked>
+                <label for="unitC">Celsius (°C)</label>
+
+                <input type="radio" name="unit" id="unitF" value="F">
+                <label for="unitF">Fahrenheit (°F)</label>
+
+                <input type="radio" name="unit" id="unitK" value="K">
+                <label for="unitK">Kelvin (K)</label>
+            </fieldset>
+
+            <!-- Buttons -->
+            <div class="actions">
+                <button type="submit" class="btn btn-primary">Convert</button>
+                <button type="button" id="clearBtn" class="btn btn-secondary">Clear</button>
+            </div>
+        </form>
+
+        <!-- ===== 3. Results (teeno units ek saath) ===== -->
+        <section class="results" aria-live="polite">
+            <h2 class="label">Results</h2>
+
+            <div class="result-grid">
+                <div class="result" id="boxC">
+                    <span class="result-unit">Celsius</span>
+                    <span class="result-value" id="resultC">—</span>
+                </div>
+                <div class="result" id="boxF">
+                    <span class="result-unit">Fahrenheit</span>
+                    <span class="result-value" id="resultF">—</span>
+                </div>
+                <div class="result" id="boxK">
+                    <span class="result-unit">Kelvin</span>
+                    <span class="result-value" id="resultK">—</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 4. Formula note ===== -->
+        <footer class="formulas">
+            <p><strong>°F</strong> = °C × 9/5 + 32 &nbsp;·&nbsp; <strong>K</strong> = °C + 273.15</p>
+            <p>Lowest possible temperature (absolute zero): −273.15 °C = −459.67 °F = 0 K</p>
+        </footer>
+    </main>
+
+    <p class="credit">Built by Zaka Saleem Hamdani · Oasis Infobyte Internship</p>
+
+    <script src="script.js"></script>
+</body>
+</html>

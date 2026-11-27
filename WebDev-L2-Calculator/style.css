@@ -1,0 +1,143 @@
+/* =========================================================
+   Calculator
+   Oasis Infobyte · Web Development · Level 2 · Task 1
+   ========================================================= */
+
+/* ---------- 1. Design tokens ---------- */
+:root {
+  --bg:        #0f172a;
+  --body:      #1e293b;   /* calculator body */
+  --key:       #334155;   /* number keys */
+  --key-hover: #475569;
+  --fn:        #64748b;   /* clear and backspace */
+  --op:        #f59e0b;   /* operators (amber) */
+  --op-hover:  #fbbf24;
+  --text:      #f8fafc;
+  --muted:     #94a3b8;
+  --error:     #f87171;
+
+  --font: "Inter", "Segoe UI", Arial, sans-serif;
+  --mono: "JetBrains Mono", Consolas, monospace;
+}
+
+/* ---------- 2. Reset and base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  min-height: 100vh;
+  display: flex;                 /* centre the calculator on the screen */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  background: radial-gradient(circle at top, #1e3a5f, var(--bg) 60%);
+}
+
+/* ---------- 3. Calculator body ---------- */
+.calculator {
+  width: 100%;
+  max-width: 340px;
+  background: var(--body);
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- 4. Display ---------- */
+.display {
+  background: #0b1220;
+  border-radius: 18px;
+  padding: 20px 20px 16px;
+  margin-bottom: 20px;
+  text-align: right;
+  min-height: 112px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;     /* keep text pinned to the bottom */
+  overflow: hidden;
+}
+
+.expression {
+  min-height: 1.4em;
+  font-family: var(--mono);
+  font-size: 1rem;
+  color: var(--muted);
+  word-break: break-all;
+}
+
+.current {
+  font-family: var(--mono);
+  font-size: 2.4rem;
+  color: var(--text);
+  word-break: break-all;
+  line-height: 1.2;
+}
+.current.small { font-size: 1.6rem; }          /* shrink long numbers */
+.current.error { color: var(--error); font-size: 1.2rem; }
+
+/* ---------- 5. Keypad (CSS Grid) ---------- */
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);       /* four equal columns */
+  gap: 12px;
+}
+
+.key {
+  font: inherit;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--key);
+  border: none;
+  border-radius: 16px;
+  height: 64px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+.key:hover { background: var(--key-hover); }
+.key:active,
+.key.pressed { transform: scale(0.94); }      /* also used for keyboard presses */
+.key:focus-visible { outline: 3px solid var(--op); outline-offset: 2px; }
+
+.key-fn { background: var(--fn); }
+.key-fn:hover { background: var(--muted); }
+
+.key-op { background: var(--op); color: var(--bg); font-size: 1.6rem; }
+.key-op:hover { background: var(--op-hover); }
+
+/* "=" spans two rows */
+.key-equals {
+  grid-row: span 2;
+  height: auto;
+  background: var(--op);
+  color: var(--bg);
+  font-size: 1.8rem;
+}
+.key-equals:hover { background: var(--op-hover); }
+
+/* "0" spans two columns */
+.key-zero { grid-column: span 2; }
+
+/* ---------- 6. Credit ---------- */
+.credit {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ---------- 7. Responsive ---------- */
+@media (max-width: 380px) {
+  .calculator { padding: 18px; border-radius: 22px; }
+  .keys { gap: 10px; }
+  .key { height: 56px; font-size: 1.2rem; }
+  .key-equals { height: auto; }               /* keep "=" two rows tall */
+  .current { font-size: 2rem; }
+}
